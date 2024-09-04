@@ -20,4 +20,10 @@
   padding: 1rem;
   border-radius: 40px;
   background-color: #3366FF;
+  transition: 0.3s ease;
+}
+
+.member-btn:hover {
+  opacity: 0.85;
+  transition: 0.3s ease;
 }

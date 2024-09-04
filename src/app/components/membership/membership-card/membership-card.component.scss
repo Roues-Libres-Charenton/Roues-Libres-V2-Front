@@ -1,0 +1,25 @@
+.card {
+    width: 280px;
+    height: 220px;
+    background-color: #3366FF;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: .2s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: .2s ease;
+}
+
+.card-btn {
+    background-color: #E07134;
+    border-radius: 20px;
+    transition: .2s ease;
+}
+
+.card-btn:hover {
+    opacity: .9;
+    transform: scale(1.03);
+    transition: .2s ease;
+}

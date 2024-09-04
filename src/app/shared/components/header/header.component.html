@@ -1,0 +1,28 @@
+<div class="flex flex-col">
+    <div class="m-6 mx-12 flex flex-row items-center justify-center gap-y-4">
+        <!-- LEFT PART -->
+        <div class="flex flex-row items-center justif-center gap-6">
+            <img src="../../../assets/logo_roues_libres.webp" alt="" class="rl-logo" (click)="navigateTo('/')">
+
+            <div class="title flex flex-col items-center justify-center font-extrabold text-sm md:text-lg lg:text-2xl">
+                <span>
+                    Roues Libres
+                </span>
+                <span>Charenton</span>
+            </div>
+        </div>
+
+        <!-- RIGHT PART -->
+        <div class="burger-icon ml-auto" (click)="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+    <div class="side-menu pt-24 p-6">
+        <div class="menu-item" (click)="navigateTo('')">Accueil</div>
+        <div class="menu-item" (click)="navigateTo('/devenir-membre')">Devenir Membre</div>
+        <div class="menu-item" (click)="navigateTo('/calendrier')">Calendrier</div>
+        <div class="menu-item" (click)="navigateTo('/contact')">Contact</div>
+    </div>
+</div>

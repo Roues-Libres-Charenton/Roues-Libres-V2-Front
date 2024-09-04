@@ -1,0 +1,88 @@
+.rl-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    transition: transform 0.5s;
+
+    &:hover {
+        transform: scale(1.05);
+        transition: transform 0.5s;
+        cursor: pointer;
+    }
+}
+
+
+
+.burger-icon {
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 3;
+
+    .bar {
+      height: 4px;
+      background-color: #fff;
+      border-radius: 2px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &.open {
+      .bar:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+      }
+      .bar:nth-child(2) {
+        opacity: 0;
+      }
+      .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+}
+
+.burger-icon::after {
+    content: '';
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: #3366FF;
+    z-index: 2;
+    opacity: 0.96;
+
+    transform: translateX(+100%);
+    transition: transform 0.3s ease-in-out;
+    
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+    overflow: hidden;
+}
+
+.menu-item {
+    font-size: 1.2rem;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    margin-top: 1rem;
+}
+
+.menu-item:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.side-menu.open {
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+}

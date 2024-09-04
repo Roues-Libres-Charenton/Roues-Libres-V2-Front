@@ -13,6 +13,11 @@ export class HeaderComponent {
   constructor(private router: Router) {}
 
   navigateTo(route: string): void {
+    this.menuOpen = false;
+    const burgerIcon = document.querySelector('.burger-icon');
+    const sideMenu = document.querySelector('.side-menu');
+    burgerIcon?.classList.remove('open');
+    sideMenu?.classList.remove('open');
     this.router.navigate([route]);
   }
 

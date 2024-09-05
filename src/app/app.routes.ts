@@ -15,7 +15,7 @@ export const routes: Routes = [
     component: ContactComponent,
   },
   {
-    path: 'calendrier',
+    path: 'calendriers',
     component: ScheduleComponent,
   },
 ];

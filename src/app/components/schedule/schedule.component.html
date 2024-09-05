@@ -1,1 +1,13 @@
-<p>schedule works!</p>
+<div class="fullheight flex flex-col items-center gap-12">
+    <h1 class="text-4xl font-extrabold self-start mx-6">
+        Calendriers
+    </h1>
+    <div class="flex flex-wrap flex-row w-full items-center justify-evenly">
+        <div class="">
+            <h2>Prochains évènements</h2>
+        </div>
+        <div class="">
+            <full-calendar [options]="calendarOptions" class="w-72 md:w-96"></full-calendar>
+        </div>
+    </div>
+</div>

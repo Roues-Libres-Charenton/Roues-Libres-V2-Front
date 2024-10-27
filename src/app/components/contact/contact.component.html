@@ -1,7 +1,33 @@
-<div class="fullheight flex flex-col items-center gap-12">
+<div class="h-full flex flex-col items-center gap-12">
     <h1 class="text-4xl font-extrabold self-start mx-6">
         Contact
     </h1>
-    <div class="flex">
+    <div class="flex flex-wrap justify-evenly items-center">
+        <div class="rounded-xl overflow-hidden w-11/12">
+            <google-map [options]="mapsOptions" width="100%">
+                <map-advanced-marker [position]=" this.center" (mapClick)="openInfoWindow()" />
+                <map-info-window>
+                    <div class="flex flex-col gap-2">
+                        <h2 class="text-2xl font-bold">Roues Libres Charenton</h2>
+                        <p>84 Quai des Carrières, 94220 Charenton-le-Pont</p>
+                    </div>
+                </map-info-window>
+            </google-map>
+        </div>
+        <div class="p-4 flex flex-col items:center justify-center">
+            <h2 class="text-3xl font-bold py-8 text-center title">Contactez-nous</h2>
+            <div class="flex flex-col gap-4 justify-center px-4">
+                <p class="text-sm">Vous avez une question, une suggestion ou une demande de partenariat ? N'hésitez
+                    pas
+                    à
+                    nous contacter !
+                </p>
+                <app-contact-field iconName="mail" contactText="contact@roues-libres-charenton.fr"></app-contact-field>
+                <app-contact-field iconName="location_on"
+                    contactText="84 Quai des Carrières, 94220 Charenton-le-Pont"></app-contact-field>
+            </div>
+            <img src="../../../assets/logo_roues_libres.webp" alt="Logo Roues Libres"
+                class="self-center my-12 rounded-lg w-24 lg:w-52">
+        </div>
     </div>
 </div>

@@ -3,6 +3,9 @@ import { MembershipComponent } from './components/membership/membership.componen
 import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
+import { DonationComponent } from './components/donation/donation.component';
+import { LegalNoticesComponent } from './components/legal-notices/legal-notices.component';
+import { LocalComponent } from './components/local/local.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -11,11 +14,23 @@ export const routes: Routes = [
     component: MembershipComponent,
   },
   {
+    path: 'nous-soutenir',
+    component: DonationComponent,
+  },
+  {
+    path: 'local',
+    component: LocalComponent,
+  },
+  {
     path: 'contact',
     component: ContactComponent,
   },
   {
     path: 'calendriers',
     component: ScheduleComponent,
+  },
+  {
+    path: 'mentions-legales',
+    component: LegalNoticesComponent,
   },
 ];

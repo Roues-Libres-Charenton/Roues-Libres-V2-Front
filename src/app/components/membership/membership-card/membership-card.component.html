@@ -1,9 +1,9 @@
-<div class="card p-2 flex flex-col items-center justify-between shadow-xl">
-    <h1 class="card-title text-4xl font-extrabold text-center">
+<div class="card p-2 flex flex-col items-center justify-between shadow-xl"
+    [ngStyle]="{ 'width': width(), 'height': height() }">
+    <h1 class="card-title text-2xl font-extrabold text-center">
         {{this.title}}
     </h1>
     <ng-content>
-
     </ng-content>
     <button class="card-btn px-12 py-2 shadow-xl" (click)="navigate()">{{this.btnText}}</button>
 </div>

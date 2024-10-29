@@ -1,9 +1,9 @@
-<div class="fullheight flex flex-col items-center gap-12">
-    <h1 class="text-4xl font-extrabold self-start mx-6">
+<div class="flex flex-col items-center justify-between gap-12">
+    <h1 class="text-4xl font-extrabold self-start px-12">
         Devenir Membre
     </h1>
 
-    <div class="flex flex-wrap items-start gap-6 justify-center px-4">
+    <!-- <div class="flex flex-wrap items-start gap-6 justify-center px-4">
         <app-membership-note title="POURQUOI ?"
             note="Devenir membre permet d'accèder à notre atelier entièrement équipe pour la réparation de vos vélos">
         </app-membership-note>
@@ -12,9 +12,9 @@
         <app-membership-note title="A QUOI SERT L'ARGENT ?"
             note="Les cotisations permettent l'achat d'outils et matériels nécessaires pour la réparation des vélos">
         </app-membership-note>
-    </div>
+    </div> -->
 
-    <div class="flex flex-wrap items-center gap-6 items-center justify-center px-4">
+    <div class="flex flex-wrap items-center gap-6 items-center">
 
         <app-membership-card title="Cotisation individuelle">
             <div class="w-full flex flex-col text-black">
@@ -50,5 +50,16 @@
                 </span>
             </div>
         </app-membership-card>
+    </div>
+
+    <mat-divider class="w-2/3"></mat-divider>
+
+    <h1 class="text-4xl font-extrabold self-start px-12">
+        Faire une donation
+    </h1>
+
+    <div class="flex flex-wrap items-center gap-6 items-center justify-center">
+        <app-membership-card title="Donation ponctuelle" btnText="Je soutiens" height="110px" />
+        <app-membership-card title="Donation récurrente" btnText="Je soutiens" height="110px" />
     </div>
 </div>

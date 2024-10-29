@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { MembershipCardComponent } from "./membership-card/membership-card.component";
-import { MembershipNoteComponent } from "./membership-note/membership-note.component";
+import { MembershipCardComponent } from './membership-card/membership-card.component';
+import { MembershipNoteComponent } from './membership-note/membership-note.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-membership',
   standalone: true,
-  imports: [MembershipCardComponent, MembershipNoteComponent],
+  imports: [MembershipCardComponent, MembershipNoteComponent, MatDividerModule],
   templateUrl: './membership.component.html',
-  styleUrl: './membership.component.scss'
+  styleUrl: './membership.component.scss',
 })
-export class MembershipComponent {
-
-}
+export class MembershipComponent {}

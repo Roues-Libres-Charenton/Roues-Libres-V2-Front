@@ -5,6 +5,7 @@ import { ContactFieldComponent } from './contact-field/contact-field.component';
 import {
   GoogleMap,
   GoogleMapsModule,
+  MapAnchorPoint,
   MapInfoWindow,
   MapMarker,
 } from '@angular/google-maps';
@@ -33,10 +34,12 @@ export class ContactComponent {
   };
 
   @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow | null = null;
+  @ViewChild(MapInfoWindow) marker: MapMarker | null = null;
 
   openInfoWindow() {
-    if (this.infoWindow != null) {
+    if (this.infoWindow != null && this.marker != null) {
       this.infoWindow.open();
+      console.log(this.infoWindow);
     }
   }
 }

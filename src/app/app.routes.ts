@@ -5,16 +5,13 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { LegalNoticesComponent } from './components/legal-notices/legal-notices.component';
 import { LocalComponent } from './components/local/local.component';
+import { MemberPageComponent } from './components/member-page/member-page.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   {
-    path: 'presentation',
-    component: HomeComponent,
-  },
-  {
     path: 'devenir-membre',
-    component: MembershipComponent,
+    component: MemberPageComponent,
   },
   {
     path: 'local',

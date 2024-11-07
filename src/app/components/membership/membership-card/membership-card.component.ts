@@ -1,5 +1,5 @@
 import { NgStyle } from '@angular/common';
-import { Component, input, Input, signal } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({

@@ -11,6 +11,7 @@ export class WheelSeparatorComponent {
   @HostBinding('style.bottom') @Input() bottom = '';
   @HostBinding('style.left') @Input() left = '';
   @HostBinding('style.width') @Input() width = '';
+  @HostBinding('style.z-index') @Input() zIndex = '2';
   rotationStyle = 'rotate(0deg)';
 
   @HostListener('window:scroll', ['$event'])

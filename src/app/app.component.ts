@@ -4,7 +4,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { WheelSeparatorComponent } from "./shared/components/wheel-separator/wheel-separator.component";
+import { WheelSeparatorComponent } from './shared/components/wheel-separator/wheel-separator.component';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +15,8 @@ import { WheelSeparatorComponent } from "./shared/components/wheel-separator/whe
     HeaderComponent,
     HomeComponent,
     MatSidenavModule,
-    WheelSeparatorComponent
-],
+    WheelSeparatorComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

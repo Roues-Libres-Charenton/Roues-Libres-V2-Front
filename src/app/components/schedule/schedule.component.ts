@@ -1,39 +1,50 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { CalendarOptions } from '@fullcalendar/core';
+import { CalendarOptions, EventClickArg } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { FullCalendarModule } from '@fullcalendar/angular';
-import interactionPlugin from '@fullcalendar/interaction';
+import interactionPlugin, { DateClickArg } from '@fullcalendar/interaction';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CalendarEvent, CalendarModule } from 'angular-calendar';
 
 @Component({
   selector: 'app-schedule',
   standalone: true,
-  imports: [FullCalendarModule],
+  imports: [FullCalendarModule, CalendarModule],
   templateUrl: './schedule.component.html',
   styleUrl: './schedule.component.scss',
 })
 export class ScheduleComponent implements OnInit {
   private _snackBar = inject(MatSnackBar);
+  viewDate: Date = new Date();
 
   nextEvents = [];
   events: { title: string; date: string }[] = [];
-  calendarOptions: CalendarOptions = {};
+  calendarOptions: CalendarOptions = {
+    headerToolbar: {
+      start: 'title',
+      center: '',
+      end: 'prev next',
+    },
+    initialView: 'dayGridMonth',
+    fixedWeekCount: false,
+    firstDay: 1,
+    titleFormat: { year: 'numeric', month: 'short' },
+    editable: false,
+    locale: 'frLocale',
+    plugins: [dayGridPlugin, interactionPlugin],
+    dateClick: (arg: DateClickArg) => this.handleDateClick(arg),
+    eventClick: (arg: EventClickArg) => {
+      this.openSnackBar(arg.event.title, 'Close');
+    },
+    contentHeight: 400,
+    events: this.events,
+  };
 
   ngOnInit(): void {
     this.events = [
       { title: 'Atelier Local', date: '2024-09-09' },
       { title: 'Atelier Place Aristide Briand ', date: '2024-09-05' },
     ];
-
-    this.calendarOptions = {
-      initialView: 'dayGridMonth',
-      plugins: [dayGridPlugin, interactionPlugin],
-      dateClick: (arg) => this.handleDateClick(arg),
-      eventClick: (arg) => {
-        this.openSnackBar(arg.event.title, 'Close');
-      },
-      events: this.events,
-    };
   }
   onDateChange() {}
 

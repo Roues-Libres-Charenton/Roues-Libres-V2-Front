@@ -2,7 +2,7 @@
 <app-home></app-home>
 }
 @else {
-<div class="flex flex-col min-h-screen pb-12">
+<div class="flex flex-col min-h-screen">
   <app-header></app-header>
   <main class="flex flex-grow w-full flex-col">
     <router-outlet>
@@ -10,5 +10,5 @@
   </main>
   <app-footer class="mt-auto"></app-footer>
 </div>
-<app-wheel-separator position="fixed" bottom="15px" left="15px"></app-wheel-separator>
+<app-wheel-separator position="fixed" bottom="5px" left="5px"></app-wheel-separator>
 }

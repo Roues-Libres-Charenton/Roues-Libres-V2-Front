@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, HostBinding, Input, input } from '@angular/core';
 import { ClickableIconComponent } from '../clickable-icon/clickable-icon.component';
 import { NgStyle } from '@angular/common';
 
@@ -11,4 +11,7 @@ import { NgStyle } from '@angular/common';
 })
 export class FooterComponent {
   bgColor = input<string>('#222222aa');
+  @HostBinding('style.position') @Input() position = '';
+  @HostBinding('style.bottom') @Input() bottom = '';
+  @HostBinding('style.left') @Input() left = '';
 }

@@ -20,8 +20,20 @@
         </div>
     </div>
     <div class="side-menu pt-24 p-6">
+        <div class="menu-item"
+            (click)="externNavigateTo('https://www.helloasso.com/associations/roues-libres-charenton/adhesions/devenir-membre')">
+            Devenir membre
+        </div>
+        <div class="menu-item"
+            (click)="externNavigateTo('https://www.helloasso.com/associations/roues-libres-charenton/formulaires/1')">
+            Achats atelier
+        </div>
+        <div class="menu-item"
+            (click)="externNavigateTo('https://www.helloasso.com/associations/roues-libres-charenton/paiements/achat-atelier')">
+            Faire un don
+        </div>
         <div class="menu-item" (click)="navigateTo('/acces-local')">Accès au local</div>
-        <div class="menu-item" (click)="navigateTo('/calendriers')">Calendriers</div>
+        <div class="menu-item" (click)="navigateTo('/calendrier')">Calendriers</div>
         <div class="menu-item" (click)="navigateTo('/contact')">Nous contacter</div>
         <div class="menu-item" (click)="navigateTo('/mentions-legales')">Mentions légales</div>
     </div>

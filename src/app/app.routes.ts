@@ -19,7 +19,7 @@ export const routes: Routes = [
     component: LocalComponent,
   },
   {
-    path: 'calendriers',
+    path: 'calendrier',
     component: ScheduleComponent,
   },
   {

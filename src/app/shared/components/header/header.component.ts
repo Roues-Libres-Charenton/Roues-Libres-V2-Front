@@ -11,6 +11,11 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   constructor(private router: Router) {}
 
+
+  externNavigateTo(url:string){
+    window.location.href = url;
+  }
+
   navigateTo(route: string): void {
     this.menuOpen = false;
     const burgerIcon = document.querySelector('.burger-icon');

@@ -1,11 +1,36 @@
-import { Component } from '@angular/core';
 import { CardImageComponent } from '../../shared/components/card-image/card-image.component';
+import {
+  GoogleMap,
+  GoogleMapsModule,
+  MapInfoWindow,
+  MapMarker,
+} from '@angular/google-maps';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-local',
   standalone: true,
-  imports: [CardImageComponent],
+  imports: [CardImageComponent, GoogleMap, GoogleMapsModule],
   templateUrl: './local.component.html',
   styleUrl: './local.component.scss',
 })
-export class LocalComponent {}
+export class LocalComponent {
+  center: google.maps.LatLngLiteral = { lat: 48.8207602, lng: 2.4020579 };
+  mapsOptions: google.maps.MapOptions = {
+    center: this.center,
+    zoom: 14,
+    streetViewControl: false,
+    mapTypeControl: false,
+    mapId: 'DEMO_MAP_ID',
+  };
+
+  @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow | null = null;
+  @ViewChild(MapInfoWindow) marker: MapMarker | null = null;
+
+  openInfoWindow() {
+    if (this.infoWindow != null && this.marker != null) {
+      this.infoWindow.open();
+      console.log(this.infoWindow);
+    }
+  }
+}

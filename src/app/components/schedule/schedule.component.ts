@@ -4,7 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import interactionPlugin, { DateClickArg } from '@fullcalendar/interaction';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CalendarEvent, CalendarModule } from 'angular-calendar';
+import { CalendarModule } from 'angular-calendar';
 
 @Component({
   selector: 'app-schedule',

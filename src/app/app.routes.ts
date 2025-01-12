@@ -6,25 +6,31 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 import { LegalNoticesComponent } from './components/legal-notices/legal-notices.component';
 import { LocalComponent } from './components/local/local.component';
 import { MemberPageComponent } from './components/member-page/member-page.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   {
-    path: 'devenir-membre',
+    path: 'achat-atelier',
     component: MemberPageComponent,
   },
   {
-    path: 'local',
+    path: 'acces-local',
     component: LocalComponent,
+  },
+  {
+    path: 'calendriers',
+    component: ScheduleComponent,
   },
   {
     path: 'contact',
     component: ContactComponent,
   },
   {
-    path: 'calendriers',
-    component: ScheduleComponent,
+    path: 'admin/login',
+    component: AdminLoginComponent,
   },
+
   {
     path: 'mentions-legales',
     component: LegalNoticesComponent,

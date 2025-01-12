@@ -1,9 +1,6 @@
-<div class="h-full flex flex-col items-center gap-12">
-    <h1 class="text-4xl font-extrabold self-start mx-6">
-        Contact
-    </h1>
+<div class="h-full flex flex-col items-center gap-2 ">
     <div class="flex flex-wrap justify-evenly items-center">
-        <div class="flex flex-col items:center justify-center">
+        <div class="flex flex-col items:center justify-center gap-4">
             <h2 class="text-3xl font-bold text-center title">Contactez-nous</h2>
             <div class="flex flex-col gap-4 justify-center px-4">
                 <p class="text-sm">Vous avez une question, une suggestion ou une demande de partenariat ? N'hésitez
@@ -16,22 +13,8 @@
                     contactText="84 Quai des Carrières, 94220 Charenton-le-Pont"></app-contact-field>
             </div>
             <img src="../../../assets/logo_roues_libres.webp" alt="Logo Roues Libres"
-                class="self-center my-12 rounded-lg w-24 lg:w-52">
+                class="self-center my-4 rounded-lg w-24 lg:w-52">
         </div>
-        <div class="rounded-xl overflow-hidden w-11/12">
-            <google-map [options]="mapsOptions" width="100%">
-                <map-advanced-marker [position]=" this.center" (mapClick)="openInfoWindow()" />
-                <map-info-window [position]="this.center">
-                    <div class="flex flex-col gap-2">
-                        <h1 class="text-2xl font-bold text-black">Roues Libres Charenton</h1>
-                        <p class="text-black">84 Quai des Carrières, 94220 Charenton-le-Pont</p>
-                        <a href="https://www.google.com/maps/place/Roues+Libres/@48.8208157,2.3995339,17z/data=!3m1!4b1!4m6!3m5!1s0x47e673e2ee9ed039:0x3b3ca5e5ce3aa311!8m2!3d48.8208157!4d2.4021088!16s%2Fg%2F11sx3rv_z6?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D"
-                            target="_blank" class="text-blue-500">Voir sur Google
-                            Maps</a>
-                        <a href="/calendriers" class="text-blue-500">Voir les horaires d'ouvertures</a>
-                    </div>
-                </map-info-window>
-            </google-map>
-        </div>
+
     </div>
 </div>

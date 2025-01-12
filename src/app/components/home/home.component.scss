@@ -11,12 +11,6 @@
     -webkit-filter: blur(4px);
 }
 
-.rl-logo {
-  height: 200px;
-  width: 200px;
-  border-radius: 20px;
-}
-
 .member-btn {
   padding: 1rem;
   border-radius: 40px;
@@ -27,4 +21,12 @@
 .member-btn:hover {
   opacity: 0.85;
   transition: 0.3s ease;
+}
+
+.rl-title{
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.rl-title-1{
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
 }

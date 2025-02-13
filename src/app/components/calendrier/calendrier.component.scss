@@ -1,0 +1,68 @@
+/* Conteneur global des événements */
+.events-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Chargement et erreur */
+.loading,
+.error {
+    font-size: 1.2rem;
+    margin: 20px;
+    text-align: center;
+}
+
+/* Carte individuelle */
+.event-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Animation au survol */
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* En-tête de la carte */
+.event-card .card-header {
+    margin-bottom: 10px;
+}
+
+.event-card .card-header h3 {
+    font-size: 1.25rem;
+    color: #333333;
+    margin: 0;
+}
+
+/* Corps de la carte */
+.event-card .card-body p {
+    margin: 5px 0;
+    color: #555555;
+    font-size: 0.9rem;
+}
+
+.event-card .card-body p strong {
+    color: #333333;
+    font-weight: bold;
+}
+
+/* Responsive (adaptation aux écrans) */
+@media (max-width: 768px) {
+    .events-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event-card {
+        width: 90%; /* Les cartes prennent presque toute la largeur */
+    }
+}

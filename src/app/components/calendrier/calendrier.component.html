@@ -1,0 +1,24 @@
+<div class="events-container">
+    @if (isLoading) {
+    <div class="loading text-center text-gray-500 font-medium">Chargement des prochains évènements...</div>
+    }
+    @if (error) {
+    <div class="error text-center text-red-500 font-medium">{{ error }}</div>
+    }
+
+    @if (!isLoading && !error) {
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        @for (event of events; track $index) {
+        <div class="event-card bg-white shadow-md rounded-lg p-6 border border-gray-200">
+            <div class="card-body text-gray-600">
+                <h4 class="text-xl font-semibold text-gray-800">{{ event.title }}</h4>
+                <p>{{event.date}}</p>
+                <p><strong>Lieu :</strong> {{ event.location }}</p>
+                <p><strong>Description :</strong> {{ event.description }}</p>
+                <p><strong>Heures :</strong> {{ event.startTime }} - {{ event.endTime }}</p>
+            </div>
+        </div>
+        }
+    </div>
+    }
+</div>

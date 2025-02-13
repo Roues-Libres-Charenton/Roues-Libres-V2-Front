@@ -1,6 +1,9 @@
 import { DayOfWeek } from '../enums/DayOfWeek.enum';
+import { EventException } from './exception.dto';
 
-export interface EventsBetweenDates {
+export type EventsBetweenDates = EventBetweenDates[];
+
+export interface EventBetweenDates {
   id: string;
   title: string;
   description: string;
@@ -11,7 +14,7 @@ export interface EventsBetweenDates {
   type: string;
   isRecurring: boolean;
   recurrenceId: string;
-  exceptions: [];
+  exceptions: EventException[];
   recurrence: {
     id: string;
     startDate: string;

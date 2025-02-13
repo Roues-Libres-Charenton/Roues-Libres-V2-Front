@@ -1,5 +1,5 @@
 export const urls = {
-  apiBaseUrl: '',
+  apiBaseUrl: 'https://xpgsbak3x3.execute-api.eu-north-1.amazonaws.com/dev',
   home: '',
   schedule: 'calendriers',
   contact: 'contact',
@@ -23,23 +23,3 @@ export const urls = {
     },
   },
 };
-
-/**
- * [Nest] 12789  - 16/09/2024 17:30:10     LOG [RoutesResolver] AppController {/}: +21ms
-[Nest] 12789  - 16/09/2024 17:30:10     LOG [RouterExplorer] Mapped {/, GET} route +2ms
-[Nest] 12789  - 16/09/2024 17:30:10     LOG [RoutesResolver] UserController {/user}: +1ms
-[Nest] 12789  - 16/09/2024 17:30:10     LOG [RouterExplorer] Mapped {/user/:id, GET} route +0ms
-[Nest] 12789  - 16/09/2024 17:30:10     LOG [RoutesResolver] AuthController {/auth}: +1ms
-[Nest] 12789  - 16/09/2024 17:30:10     LOG [RouterExplorer] Mapped {/auth/register, POST} route +0ms
-[Nest] 12789  - 16/09/2024 17:30:10     LOG [RouterExplorer] Mapped {/auth/login, POST} route +0ms
-[Nest] 12789  - 16/09/2024 17:30:10     LOG [RouterExplorer] Mapped {/auth/refresh, POST} route +0ms
-[Nest] 12789  - 16/09/2024 17:30:10     LOG [RoutesResolver] EventsController {/events}: +0ms
-[Nest] 12789  - 16/09/2024 17:30:10     LOG [RouterExplorer] Mapped {/events/single, POST} route +1ms
-[Nest] 12789  - 16/09/2024 17:30:10     LOG [RouterExplorer] Mapped {/events/recurring, POST} route +0ms
-[Nest] 12789  - 16/09/2024 17:30:10     LOG [RouterExplorer] Mapped {/events, GET} route +0ms
-[Nest] 12789  - 16/09/2024 17:30:10     LOG [RouterExplorer] Mapped {/events/recurring/:id/exceptions, POST} route +1ms
-[Nest] 12789  - 16/09/2024 17:30:10     LOG [RouterExplorer] Mapped {/events/single/:id, PUT} route +0ms
-[Nest] 12789  - 16/09/2024 17:30:10     LOG [RouterExplorer] Mapped {/events/recurring/:id, PUT} route +0ms
-[Nest] 12789  - 16/09/2024 17:30:10     LOG [RouterExplorer] Mapped {/events/single/:id, DELETE} route +0ms
-[Nest] 12789  - 16/09/2024 17:30:10     LOG [RouterExplorer] Mapped {/events/recurring/:id, DELETE} route +0ms
- */

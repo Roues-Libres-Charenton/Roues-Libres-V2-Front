@@ -6,16 +6,22 @@
     <app-header></app-header>
 
     <div class="flex flex-wrap items-center justify-around gap-y-4">
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-2">
             <span>
                 Atelier d'auto-réparation <br /> de vélos de Charenton-le-Pont
             </span>
-            <button class="member-btn text-xl font-bold" (click)="navigateTo('/devenir-membre')">Devenir
-                Membre</button>
+            <button class="member-btn text-xl font-bold"
+                (click)="externalNavigateTo('https://www.helloasso.com/associations/roues-libres-charenton/adhesions/devenir-membre')">Devenir
+                membre</button>
+            <button class="member-btn text-xl font-bold"
+                (click)="externalNavigateTo('https://www.helloasso.com/associations/roues-libres-charenton/formulaires/1')">
+                Achats ateliers</button>
+            <button class="member-btn text-xl font-bold"
+                (click)="externalNavigateTo('https://www.helloasso.com/associations/roues-libres-charenton/paiements/achat-atelier')">
+                Faire un don</button>
         </div>
         <img src="../../../assets/logo_roues_libres.webp" alt="" class="rounded-lg w-[200px] h-[200px]">
     </div>
-
 
     <div class="flex flex-col justify-center items-center mt-auto py-2">
         <span class="rl-title-1 font-extrabold">

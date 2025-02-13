@@ -6,7 +6,8 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 import { LegalNoticesComponent } from './components/legal-notices/legal-notices.component';
 import { LocalComponent } from './components/local/local.component';
 import { MemberPageComponent } from './components/member-page/member-page.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { CalendrierComponent } from './components/calendrier/calendrier.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,7 +21,7 @@ export const routes: Routes = [
   },
   {
     path: 'calendrier',
-    component: ScheduleComponent,
+    component: CalendrierComponent,
   },
   {
     path: 'contact',

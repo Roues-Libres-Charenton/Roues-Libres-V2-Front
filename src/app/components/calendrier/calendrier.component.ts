@@ -4,6 +4,7 @@ import { EventsBetweenDates } from '../../shared/models/interfaces/events-betwee
 import { eventsBetweenDatesToEvents } from '../../shared/utils/EventsBetweenDatesToEvents';
 import { SingleEvent } from '../../shared/models/interfaces/single-event';
 import { urls } from '../../shared/config/url-configs';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-calendrier',
@@ -11,6 +12,7 @@ import { urls } from '../../shared/config/url-configs';
   imports: [],
   templateUrl: './calendrier.component.html',
   styleUrl: './calendrier.component.scss',
+  providers: [{ provide: 'LOCALE_ID', useValue: 'fr-FR' }],
 })
 export class CalendrierComponent implements OnInit {
   events: SingleEvent[] = [];
@@ -21,6 +23,10 @@ export class CalendrierComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchEvents();
+  }
+
+  formatEventDate(date: string): string {
+    return formatDate(date, 'EEEE d MMMM y', 'fr-FR');
   }
 
   fetchEvents(): void {

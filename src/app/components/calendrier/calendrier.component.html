@@ -7,15 +7,16 @@
     }
 
     @if (!isLoading && !error) {
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
         @for (event of events; track $index) {
-        <div class="event-card bg-white shadow-md rounded-lg p-6 border border-gray-200">
+        <div
+            class="event-card bg-white shadow-lg rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition-shadow">
             <div class="card-body text-gray-600">
-                <h4 class="text-xl font-semibold text-gray-800">{{ event.title }}</h4>
-                <p>{{event.date}}</p>
-                <p><strong>Lieu :</strong> {{ event.location }}</p>
-                <p><strong>Description :</strong> {{ event.description }}</p>
-                <p><strong>Heures :</strong> {{ event.startTime }} - {{ event.endTime }}</p>
+                <h4 class="text-xl font-bold text-gray-800 mb-2">{{ event.title }}</h4>
+                <p class="text-sm text-gray-500">📅 {{ formatEventDate(event.date) }}</p>
+                <p class="text-sm"><strong>📍 Lieu :</strong> {{ event.location }}</p>
+                <p class="text-sm"><strong>ℹ️ Description :</strong> {{ event.description }}</p>
+                <p class="text-sm"><strong>⏰ Heures :</strong> {{ event.startTime }} - {{ event.endTime }}</p>
             </div>
         </div>
         }

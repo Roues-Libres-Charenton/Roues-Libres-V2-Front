@@ -31,22 +31,26 @@ export class CalendrierComponent implements OnInit {
 
   fetchEvents(): void {
     const currentDate = new Date();
-    const currentDateNextMonth = new Date(
+
+    const lastDayOfCurrentYear = new Date(
       currentDate.getFullYear(),
-      currentDate.getMonth() + 1,
-      currentDate.getDate()
+      11,
+      31,
+      23,
+      59,
+      59
     );
 
     const apiUrl = `${
       urls.apiBaseUrl
-    }/events?startDate=${currentDate.toISOString()}&endDate=${currentDateNextMonth.toISOString()}`;
+    }/events?startDate=${currentDate.toISOString()}&endDate=${lastDayOfCurrentYear.toISOString()}`;
 
     this.http.get<EventsBetweenDates>(apiUrl).subscribe({
       next: (data) => {
         this.events = eventsBetweenDatesToEvents(
           data,
           currentDate.toISOString(),
-          currentDateNextMonth.toISOString()
+          lastDayOfCurrentYear.toISOString()
         );
         this.isLoading = false;
       },
@@ -55,5 +59,9 @@ export class CalendrierComponent implements OnInit {
         this.isLoading = false;
       },
     });
+  }
+
+  getCurrentYear(): number {
+    return new Date().getFullYear();
   }
 }

@@ -42,11 +42,19 @@ export class LocalComponent implements OnInit {
 
   scrollImages(direction: number) {
     const scrollAmount = 300;
-    if (this.imageContainer) {
+    if (this.imageContainer && this.isScrollable(direction)) {
       this.imageContainer.nativeElement.scrollBy({
         left: direction * scrollAmount,
         behavior: 'smooth',
       });
     }
+  }
+
+  isScrollable(direction:number){
+    if(this.imageContainer){
+      const container = this.imageContainer.nativeElement;
+      return direction === 1 ? container.scrollLeft < container.scrollWidth - container.clientWidth : container.scrollLeft > 0;
+    }
+    return false;
   }
 }

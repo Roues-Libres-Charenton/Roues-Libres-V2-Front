@@ -5,7 +5,7 @@ import {
   MapInfoWindow,
   MapMarker,
 } from '@angular/google-maps';
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-local',
@@ -14,7 +14,7 @@ import { Component, ViewChild } from '@angular/core';
   templateUrl: './local.component.html',
   styleUrl: './local.component.scss',
 })
-export class LocalComponent {
+export class LocalComponent implements OnInit {
   center: google.maps.LatLngLiteral = { lat: 48.8207602, lng: 2.4020579 };
   mapsOptions: google.maps.MapOptions = {
     center: this.center,
@@ -24,6 +24,10 @@ export class LocalComponent {
     mapId: 'DEMO_MAP_ID',
   };
 
+  ngOnInit(): void {
+    this.openInfoWindow();
+  }
+
   @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow | null = null;
   @ViewChild(MapInfoWindow) marker: MapMarker | null = null;
 
@@ -31,6 +35,18 @@ export class LocalComponent {
     if (this.infoWindow != null && this.marker != null) {
       this.infoWindow.open();
       console.log(this.infoWindow);
+    }
+  }
+
+  @ViewChild('imageContainer', { static: false }) imageContainer!: ElementRef;
+
+  scrollImages(direction: number) {
+    const scrollAmount = 300;
+    if (this.imageContainer) {
+      this.imageContainer.nativeElement.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth',
+      });
     }
   }
 }

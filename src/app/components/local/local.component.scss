@@ -1,17 +1,50 @@
-.local-imgs{
+.local-imgs {
     display: flex;
     overflow-x: auto;
     padding: 1rem;
     gap: 1rem;
     scroll-snap-type: x proximity;
+    position: relative;
+    align-items: center;
+    height: 100%;
 }
 
-.local-img{
+.local-img {
     min-width: 280px;
     scroll-snap-align: center;
 }
+.scroll-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
 
-.maps-map{
-    height: 500px;
-    width: clamp(280px, 100%, 500px);
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-btn:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.scroll-btn.left {
+    left: 5px;
+}
+
+.scroll-btn.right {
+    right: 5px;
 }

@@ -8,10 +8,14 @@
         descendre à pied sur le Quai des Carrières (1 minute de marche).
     </p>
 </div>
-<div class="local-imgs">
-    <app-card-image asset="/assets/local-1.webp" class="local-img"></app-card-image>
-    <app-card-image asset="/assets/local-2.webp" class="local-img"></app-card-image>
-    <app-card-image asset="/assets/local-3.webp" class="local-img"></app-card-image>
+<div class="scroll-container">
+    <button class="scroll-btn left" (click)="scrollImages(-1)">&#9665;</button>
+    <div class="local-imgs" #imageContainer>
+        <app-card-image asset="/assets/local-1.webp" class="local-img"></app-card-image>
+        <app-card-image asset="/assets/local-2.webp" class="local-img"></app-card-image>
+        <app-card-image asset="/assets/local-3.webp" class="local-img"></app-card-image>
+    </div>
+    <button class="scroll-btn right" (click)="scrollImages(1)">&#9655;</button>
 </div>
 
 <div class="w-full p-4 rounded-xl my-4 flex items-center justify-center">

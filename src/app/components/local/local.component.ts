@@ -25,7 +25,9 @@ export class LocalComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.openInfoWindow();
+    setTimeout(() => {
+      this.openInfoWindow();
+    }, 1000);
   }
 
   @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow | null = null;
@@ -50,10 +52,12 @@ export class LocalComponent implements OnInit {
     }
   }
 
-  isScrollable(direction:number){
-    if(this.imageContainer){
+  isScrollable(direction: number) {
+    if (this.imageContainer) {
       const container = this.imageContainer.nativeElement;
-      return direction === 1 ? container.scrollLeft < container.scrollWidth - container.clientWidth : container.scrollLeft > 0;
+      return direction === 1
+        ? container.scrollLeft < container.scrollWidth - container.clientWidth
+        : container.scrollLeft > 0;
     }
     return false;
   }

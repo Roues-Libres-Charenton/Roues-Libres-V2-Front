@@ -64,4 +64,20 @@ export class CalendrierComponent implements OnInit {
   getCurrentYear(): number {
     return new Date().getFullYear();
   }
+  groupByMonth(events: SingleEvent[]): [string, SingleEvent[]][] {
+    const grouped: { [key: string]: SingleEvent[] } = {};
+
+    events.forEach((event) => {
+      const month = new Date(event.date).toLocaleString('default', {
+        month: 'long',
+        year: 'numeric',
+      });
+      if (!grouped[month]) {
+        grouped[month] = [];
+      }
+      grouped[month].push(event);
+    });
+
+    return Object.entries(grouped);
+  }
 }

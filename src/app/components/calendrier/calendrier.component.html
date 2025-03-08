@@ -16,6 +16,11 @@
 
     <!-- Liste des évènements -->
     @if (!isLoading && !error) {
+
+    <div>
+        <h2 class="text-3xl font-bold text-center title">Évènements à venir en {{ getCurrentYear() }}</h2>
+    </div>
+
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 py-6">
         @for (event of events; track $index) {
         <div

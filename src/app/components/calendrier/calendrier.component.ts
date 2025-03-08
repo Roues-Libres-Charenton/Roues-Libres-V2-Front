@@ -26,7 +26,8 @@ export class CalendrierComponent implements OnInit {
   }
 
   formatEventDate(date: string): string {
-    return formatDate(date, 'EEEE d MMMM y', 'fr-FR');
+    const formatedDate = formatDate(date, 'EEEE d MMMM y', 'fr-FR');
+    return formatedDate.charAt(0).toUpperCase() + formatedDate.slice(1);
   }
 
   fetchEvents(): void {
@@ -68,10 +69,13 @@ export class CalendrierComponent implements OnInit {
     const grouped: { [key: string]: SingleEvent[] } = {};
 
     events.forEach((event) => {
-      const month = new Date(event.date).toLocaleString('default', {
+      let month = new Date(event.date).toLocaleString('default', {
         month: 'long',
         year: 'numeric',
       });
+
+      month = month.charAt(0).toUpperCase() + month.slice(1);
+
       if (!grouped[month]) {
         grouped[month] = [];
       }

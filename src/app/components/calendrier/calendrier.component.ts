@@ -124,9 +124,9 @@ export class CalendrierComponent implements OnInit {
   eventTypeColor(str: string) {
     switch (str) {
       case 'Atelier Plein Air':
-        return '#3366FF';
+        return '#189034';
       case 'Atelier':
-        return '#B0D0D3';
+        return '#588CB1';
       case 'Fete du vélo':
         return '#E07134';
       default:

@@ -1,4 +1,3 @@
-import { cu } from '@fullcalendar/core/internal-common';
 import {
   EventBetweenDates,
   EventsBetweenDates,

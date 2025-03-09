@@ -36,7 +36,6 @@ export class LocalComponent implements OnInit {
   openInfoWindow() {
     if (this.infoWindow != null && this.marker != null) {
       this.infoWindow.open();
-      console.log(this.infoWindow);
     }
   }
 

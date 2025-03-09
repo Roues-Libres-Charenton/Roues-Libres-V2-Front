@@ -25,8 +25,8 @@
     <p class="text-xl font-bold text-left w-full pt-4">{{ monthEvents[0] }}</p>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 justify-items-center">
         @for (event of monthEvents[1]; track $index) {
-        <div
-            class="event-card bg-white shadow-md rounded-xl p-5 border border-gray-100 hover:shadow-lg transition-all w-full min-h-[180px]">
+        <div class="event-card bg-white shadow-md rounded-xl p-5 border border-gray-100 hover:shadow-lg transition-all w-full min-h-[180px]"
+            [style.border-left]="'5px solid ' + eventTypeColor(event.type)">
             <div class="card-body text-gray-700 space-y-3">
                 <h4 class="text-lg font-semibold text-gray-400">{{ event.title }}</h4>
                 <div class="text-sm text-white flex items-center gap-2">

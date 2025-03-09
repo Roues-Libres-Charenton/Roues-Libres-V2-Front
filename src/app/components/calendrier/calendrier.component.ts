@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { EventsBetweenDates } from '../../shared/models/interfaces/events-between-dates.dto';
-import { eventsBetweenDatesToEvents } from '../../shared/utils/EventsBetweenDatesToEvents';
+import {
+  getRecurringEvents,
+  mergeEventsLists,
+  nonRecurringEventToSingleEvent,
+} from '../../shared/utils/EventsBetweenDatesToEvents';
 import { SingleEvent } from '../../shared/models/interfaces/single-event';
 import { urls } from '../../shared/config/url-configs';
 import { formatDate } from '@angular/common';
@@ -44,15 +48,30 @@ export class CalendrierComponent implements OnInit {
 
     const apiUrl = `${
       urls.apiBaseUrl
-    }/events?startDate=${currentDate.toISOString()}&endDate=${lastDayOfCurrentYear.toISOString()}`;
+    }/events?startDate=${currentDate.toDateString()}&endDate=${lastDayOfCurrentYear.toDateString()}`;
 
     this.http.get<EventsBetweenDates>(apiUrl).subscribe({
       next: (data) => {
-        this.events = eventsBetweenDatesToEvents(
-          data,
-          currentDate.toISOString(),
-          lastDayOfCurrentYear.toISOString()
-        );
+        let tempEvents: SingleEvent[] = [];
+        for (let i = 0; i < data.length; i++) {
+          if (data[i].isRecurring) {
+            tempEvents = mergeEventsLists(
+              tempEvents,
+              getRecurringEvents(
+                data[i],
+                currentDate.toDateString(),
+                lastDayOfCurrentYear.toDateString()
+              )
+            );
+          } else {
+            tempEvents = mergeEventsLists(
+              tempEvents,
+              nonRecurringEventToSingleEvent(data[i])
+            );
+          }
+        }
+
+        this.events = tempEvents;
         this.isLoading = false;
       },
       error: (err: any) => {
@@ -83,5 +102,35 @@ export class CalendrierComponent implements OnInit {
     });
 
     return Object.entries(grouped);
+  }
+
+  getEventTypeColor(type: string): string {
+    switch (type) {
+      case 'Concert':
+        return 'bg-yellow-500';
+      case 'Spectacle':
+        return 'bg-blue-500';
+      case 'Atelier':
+        return 'bg-green-500';
+      case 'Conférence':
+        return 'bg-red-500';
+      case 'Autre':
+        return 'bg-gray-500';
+      default:
+        return 'bg-gray-500';
+    }
+  }
+
+  eventTypeColor(str: string) {
+    switch (str) {
+      case 'Atelier Plein Air':
+        return '#3366FF';
+      case 'Atelier':
+        return '#B0D0D3';
+      case 'Fete du vélo':
+        return '#E07134';
+      default:
+        return '#FFCAD4';
+    }
   }
 }

@@ -1,18 +1,10 @@
+import { cu } from '@fullcalendar/core/internal-common';
 import {
   EventBetweenDates,
   EventsBetweenDates,
 } from '../models/interfaces/events-between-dates.dto';
 import { SingleEvent } from '../models/interfaces/single-event';
 
-enum DayOfWeek {
-  Dimanche = 0,
-  Lundi = 1,
-  Mardi = 2,
-  Mercredi = 3,
-  Jeudi = 4,
-  Vendredi = 5,
-  Samedi = 6,
-}
 const numberToDay = [
   'Dimanche',
   'Lundi',
@@ -61,7 +53,7 @@ export function eventsBetweenDatesToEvents(
   return result;
 }
 
-function getRecurringEvents(
+export function getRecurringEvents(
   event: EventBetweenDates,
   startDate: string,
   endDate: string
@@ -88,13 +80,13 @@ function getRecurringEvents(
       if (
         currentDate >= recurrenceStart &&
         currentDate <= recurrenceEnd &&
-        !exceptions.has(currentDate.toISOString())
+        !exceptions.has(currentDate.toDateString())
       ) {
         singleEvents.push({
           id: event.id,
           title: event.title,
           description: event.description,
-          date: currentDate.toISOString().split('T')[0],
+          date: currentDate.toDateString().split('T')[0],
           startTime: event.startTime,
           endTime: event.endTime,
           location: event.location,
@@ -106,6 +98,41 @@ function getRecurringEvents(
   }
 
   return singleEvents;
+}
+
+export function nonRecurringEventToSingleEvent(
+  event: EventBetweenDates
+): SingleEvent {
+  if (event.isRecurring || !event.date) {
+    throw new Error('Event is recurring or has no date');
+  }
+  return {
+    id: event.id,
+    title: event.title,
+    description: event.description,
+    date: event.date,
+    startTime: event.startTime,
+    endTime: event.endTime,
+    location: event.location,
+    type: event.type,
+  };
+}
+
+export function mergeEventsLists(
+  events1: SingleEvent[] | SingleEvent,
+  events2: SingleEvent[] | SingleEvent
+): SingleEvent[] {
+  if (!Array.isArray(events1)) {
+    events1 = [events1];
+  }
+
+  if (!Array.isArray(events2)) {
+    events2 = [events2];
+  }
+
+  return [...events1, ...events2].sort((a, b) => {
+    return new Date(a.date).getTime() - new Date(b.date).getTime();
+  });
 }
 
 function incrementYear(date: Date): Date {

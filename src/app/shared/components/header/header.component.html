@@ -14,29 +14,37 @@
         </div>
 
         <!-- RIGHT PART -->
-        <div class="burger-icon ml-auto" (click)="toggleMenu()">
+        <a class="burger-icon ml-auto" tabindex="0" (keyup.enter)="toggleMenu()" (click)="toggleMenu()">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
-        </div>
+        </a>
     </div>
-    <div class="side-menu pt-24 p-6">
-        <div class="menu-item" (click)="navigateTo('/')">Accueil</div>
-        <div class="menu-item"
+    <div class="side-menu pt-24 p-6 flex flex-col">
+        <div class="menu-item" tabindex="0" (keyup.enter)="navigateTo('/')" (click)="navigateTo('/')">Accueil</div>
+        <a class="menu-item" tabindex="0"
+            (keyup.enter)="externNavigateTo('https://www.helloasso.com/associations/roues-libres-charenton/adhesions/devenir-membre')"
             (click)="externNavigateTo('https://www.helloasso.com/associations/roues-libres-charenton/adhesions/devenir-membre')">
+
             Devenir membre
-        </div>
-        <div class="menu-item"
+        </a>
+        <a class="menu-item" tabindex="0"
+            (keyup.enter)="externNavigateTo('https://www.helloasso.com/associations/roues-libres-charenton/paiements/achat-atelier')"
             (click)="externNavigateTo('https://www.helloasso.com/associations/roues-libres-charenton/paiements/achat-atelier')">
             Achats atelier
-        </div>
-        <div class="menu-item"
+        </a>
+        <a class="menu-item" tabindex="0"
+            (keyup.enter)="externNavigateTo('https://www.helloasso.com/associations/roues-libres-charenton/formulaires/1')"
             (click)="externNavigateTo('https://www.helloasso.com/associations/roues-libres-charenton/formulaires/1')">
             Faire un don
-        </div>
-        <div class="menu-item" (click)="navigateTo('/acces-local')">Accès au local</div>
-        <div class="menu-item" (click)="navigateTo('/calendrier')">Calendriers</div>
-        <div class="menu-item" (click)="navigateTo('/contact')">Nous contacter</div>
-        <div class="menu-item" (click)="navigateTo('/mentions-legales')">Mentions légales</div>
+        </a>
+        <a class="menu-item" tabindex="0" (keyup.enter)="navigateTo('/acces-local')"
+            (click)="navigateTo('/acces-local')">Accès au local</a>
+        <a class="menu-item" tabindex="0" (keyup.enter)="navigateTo('/calendrier')"
+            (click)="navigateTo('/calendrier')">Calendriers</a>
+        <a class="menu-item" tabindex="0" (keyup.enter)="navigateTo('/contact')" (click)="navigateTo('/contact')">Nous
+            contacter</a>
+        <a class="menu-item" tabindex="0" (keyup.enter)="navigateTo('/mentions-legales')"
+            (click)="navigateTo('/mentions-legales')">Mentions légales</a>
     </div>
 </div>

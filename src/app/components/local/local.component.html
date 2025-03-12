@@ -12,9 +12,12 @@
 <div class="scroll-container">
     <button class="scroll-btn left" (click)="scrollImages(-1)">&#9665;</button>
     <div class="local-imgs" #imageContainer>
-        <app-card-image asset="/assets/local-1.webp" class="local-img"></app-card-image>
-        <app-card-image asset="/assets/local-2.webp" class="local-img"></app-card-image>
-        <app-card-image asset="/assets/local-3.webp" class="local-img"></app-card-image>
+        <app-card-image asset="/assets/local-1.webp" alt="Entrée du local de co-réparation"
+            class="local-img"></app-card-image>
+        <app-card-image asset="/assets/local-2.webp" alt="Accès depuis l'Avenue de la Liberté"
+            class="local-img"></app-card-image>
+        <app-card-image asset="/assets/local-3.webp" alt="Accès depuis le Quai des Carrières"
+            class="local-img"></app-card-image>
     </div>
     <button class="scroll-btn right" (click)="scrollImages(1)">&#9655;</button>
 </div>

@@ -9,6 +9,7 @@ import {
 import { SingleEvent } from '../../shared/models/interfaces/single-event';
 import { urls } from '../../shared/config/url-configs';
 import { formatDate } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-calendrier',
@@ -23,10 +24,20 @@ export class CalendrierComponent implements OnInit {
   isLoading = true;
   error: string | null = null;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private title: Title,
+    private meta: Meta
+  ) {}
 
   ngOnInit(): void {
     this.fetchEvents();
+    this.title.setTitle('Roues libres Charenton - Calendrier');
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        "Retrouvez tous les évènements de l'association Roues Libres Charenton dans notre calendrier. Ateliers, fête du vélo, plein air, tout au long de l'année 2025.",
+    });
   }
 
   formatEventDate(date: string): string {

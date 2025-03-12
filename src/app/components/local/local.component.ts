@@ -6,6 +6,7 @@ import {
   MapMarker,
 } from '@angular/google-maps';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-local',
@@ -24,10 +25,19 @@ export class LocalComponent implements OnInit {
     mapId: 'DEMO_MAP_ID',
   };
 
+  constructor(private title: Title, private meta: Meta) {}
+
   ngOnInit(): void {
     setTimeout(() => {
       this.openInfoWindow();
     }, 1000);
+
+    this.title.setTitle('Roues libres Charenton - Local');
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        "Découvrez le local de co-réparation de vélos de l'association Roues Libres Charenton situé à Charenton-le-Pont.",
+    });
   }
 
   @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow | null = null;

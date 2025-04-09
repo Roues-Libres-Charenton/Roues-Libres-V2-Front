@@ -16,7 +16,7 @@ export class ContactComponent implements OnInit {
     this.meta.updateTag({
       name: 'description',
       content:
-        "Vous souhaitez nous contacter ? Vous avez des questions sur nos ateliers, nos évènements ou nos actions ? N'hésitez pas à nous envoyer un message !",
+        "Vous souhaitez nous contacter ? Vous avez des questions sur nos ateliers de co-réparation, nos évènements ou nos actions ? N'hésitez pas à nous envoyer un message !",
     });
   }
 }

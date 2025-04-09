@@ -1,0 +1,36 @@
+name: Fetch Events and Push to Assets
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  fetch-events:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '22'
+
+    - name: Install dependencies
+      run: |
+        npm install
+
+    - name: Fetch events and save to JSON
+      run: |
+        node fetch-events.js
+
+    - name: Push events.json to src/assets
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@users.noreply.github.com"
+        git add ./src/assets/events.json
+        git commit -m "Update events.json"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

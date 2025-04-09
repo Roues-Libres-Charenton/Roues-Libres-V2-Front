@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
     this.meta.updateTag({
       name: 'description',
       content:
-        "Bienvenue sur le site de l'association Roues Libres Charenton. Découvrez nos ateliers, nos évènements et nos actions pour promouvoir la pratique du vélo à Charenton-le-Pont.",
+        "Bienvenue sur le site de l'association des Roues Libres de Charenton. Découvrez nos ateliers de co-réparation de vélos, nos évènements et nos actions pour promouvoir la pratique du vélo à Charenton-le-Pont.",
     });
   }
 

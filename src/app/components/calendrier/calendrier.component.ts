@@ -36,7 +36,7 @@ export class CalendrierComponent implements OnInit {
     this.meta.updateTag({
       name: 'description',
       content:
-        "Retrouvez tous les évènements de l'association Roues Libres Charenton dans notre calendrier. Ateliers, fête du vélo, plein air, tout au long de l'année 2025.",
+        "Retrouvez tous les évènements de l'association Roues Libres Charenton dans notre calendrier. Ateliers de co-réparation de vélos, fête du vélo, plein air, tout au long de l'année 2025.",
     });
   }
 

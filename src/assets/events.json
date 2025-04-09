@@ -1,0 +1,199 @@
+[
+  {
+    "id": "6783ab4ec0436885bf2695a7",
+    "title": "Atelier",
+    "description": "Atelier co-réparation",
+    "date": null,
+    "startTime": "14:00",
+    "endTime": "18:00",
+    "location": "Atelier 84 quai des Carrières, Charenton",
+    "type": "Atelier",
+    "isRecurring": true,
+    "recurrenceId": "6783ab4ec0436885bf2695a6",
+    "exceptions": [
+      {
+        "id": "67ccd778db0cdf80cd71043a",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-04-20T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd791db0cdf80cd71043b",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-05-04T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd7b5db0cdf80cd71043c",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-06-01T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd7b9db0cdf80cd71043d",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-06-29T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd7d3db0cdf80cd71043e",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-07-06T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd7d7db0cdf80cd71043f",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-07-20T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd7dadb0cdf80cd710440",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-07-27T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd7f0db0cdf80cd710441",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-08-03T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd7f4db0cdf80cd710442",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-08-10T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd7f8db0cdf80cd710443",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-08-17T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd7fddb0cdf80cd710444",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-08-31T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd810db0cdf80cd710445",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-09-07T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd822db0cdf80cd710446",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-10-05T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd834db0cdf80cd710447",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-11-02T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd838db0cdf80cd710448",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-11-30T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd849db0cdf80cd710449",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-12-07T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd84ddb0cdf80cd71044a",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-12-28T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd87fdb0cdf80cd71044b",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-05-18T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd888db0cdf80cd71044c",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-06-15T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd898db0cdf80cd71044d",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-09-21T00:00:00.000Z"
+      },
+      {
+        "id": "67ccd89ddb0cdf80cd71044e",
+        "eventId": "6783ab4ec0436885bf2695a7",
+        "date": "2025-10-19T00:00:00.000Z"
+      }
+    ],
+    "recurrence": {
+      "id": "6783ab4ec0436885bf2695a6",
+      "startDate": "2025-01-01T00:00:00.000Z",
+      "endDate": "2030-10-29T00:00:00.000Z",
+      "daysOfWeek": [
+        "Dimanche"
+      ]
+    }
+  },
+  {
+    "id": "67ccd934db0cdf80cd71044f",
+    "title": "Fête du vélo",
+    "description": "Co-réparation et découverte de l'association",
+    "date": "2025-05-17T00:00:00.000Z",
+    "startTime": "09:00",
+    "endTime": "18:00",
+    "location": "Place Aristide Briand, Charenton",
+    "type": "Fete du vélo",
+    "isRecurring": false,
+    "recurrenceId": null,
+    "exceptions": [],
+    "recurrence": null
+  },
+  {
+    "id": "67ccda54db0cdf80cd710450",
+    "title": "Atelier plein air",
+    "description": "Atelier co-réparation",
+    "date": "2025-05-18T00:00:00.000Z",
+    "startTime": "14:00",
+    "endTime": "17:00",
+    "location": "Place Aristide Briand, Charenton",
+    "type": "Atelier Plein Air",
+    "isRecurring": false,
+    "recurrenceId": null,
+    "exceptions": [],
+    "recurrence": null
+  },
+  {
+    "id": "67ccda68db0cdf80cd710451",
+    "title": "Atelier plein air",
+    "description": "Atelier co-réparation",
+    "date": "2025-06-15T00:00:00.000Z",
+    "startTime": "14:00",
+    "endTime": "17:00",
+    "location": "Place Aristide Briand, Charenton",
+    "type": "Atelier Plein Air",
+    "isRecurring": false,
+    "recurrenceId": null,
+    "exceptions": [],
+    "recurrence": null
+  },
+  {
+    "id": "67ccda78db0cdf80cd710452",
+    "title": "Atelier plein air",
+    "description": "Atelier co-réparation",
+    "date": "2025-09-21T00:00:00.000Z",
+    "startTime": "14:00",
+    "endTime": "17:00",
+    "location": "Place Aristide Briand, Charenton",
+    "type": "Atelier Plein Air",
+    "isRecurring": false,
+    "recurrenceId": null,
+    "exceptions": [],
+    "recurrence": null
+  },
+  {
+    "id": "67ccda87db0cdf80cd710453",
+    "title": "Atelier plein air",
+    "description": "Atelier co-réparation",
+    "date": "2025-10-19T00:00:00.000Z",
+    "startTime": "14:00",
+    "endTime": "17:00",
+    "location": "Place Aristide Briand, Charenton",
+    "type": "Atelier Plein Air",
+    "isRecurring": false,
+    "recurrenceId": null,
+    "exceptions": [],
+    "recurrence": null
+  }
+]

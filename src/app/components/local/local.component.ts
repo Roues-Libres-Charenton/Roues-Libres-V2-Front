@@ -36,7 +36,7 @@ export class LocalComponent implements OnInit {
     this.meta.updateTag({
       name: 'description',
       content:
-        "Découvrez le local de co-réparation de vélos de l'association Roues Libres Charenton situé à Charenton-le-Pont.",
+        "Découvrez le local de co-réparation de vélos de l'association des Roues Libres situé à Charenton-le-Pont.",
     });
   }
 

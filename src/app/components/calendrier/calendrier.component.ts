@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { EventsBetweenDates } from '../../shared/models/interfaces/events-between-dates.dto';
 import {
@@ -7,9 +6,9 @@ import {
   nonRecurringEventToSingleEvent,
 } from '../../shared/utils/EventsBetweenDatesToEvents';
 import { SingleEvent } from '../../shared/models/interfaces/single-event';
-import { urls } from '../../shared/config/url-configs';
-import { formatDate } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
+import jsonData from '../../../assets/events.json';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-calendrier',
@@ -21,17 +20,13 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class CalendrierComponent implements OnInit {
   events: SingleEvent[] = [];
-  isLoading = true;
+  isLoading = false; // isLoading est toujours à false maintenant
   error: string | null = null;
 
-  constructor(
-    private http: HttpClient,
-    private title: Title,
-    private meta: Meta
-  ) {}
+  constructor(private title: Title, private meta: Meta) {}
 
   ngOnInit(): void {
-    this.fetchEvents();
+    this.loadEvents();
     this.title.setTitle('Roues libres Charenton - Calendrier');
     this.meta.updateTag({
       name: 'description',
@@ -45,9 +40,8 @@ export class CalendrierComponent implements OnInit {
     return formatedDate.charAt(0).toUpperCase() + formatedDate.slice(1);
   }
 
-  fetchEvents(): void {
+  loadEvents(): void {
     const currentDate = new Date();
-
     const lastDayOfCurrentYear = new Date(
       currentDate.getFullYear(),
       11,
@@ -57,44 +51,36 @@ export class CalendrierComponent implements OnInit {
       59
     );
 
-    const apiUrl = `${
-      urls.apiBaseUrl
-    }/events?startDate=${currentDate.toDateString()}&endDate=${lastDayOfCurrentYear.toDateString()}`;
+    // Cast jsonData en EventsBetweenDates pour éviter les erreurs TypeScript
+    const data = jsonData as EventsBetweenDates;
+    console.log(jsonData);
 
-    this.http.get<EventsBetweenDates>(apiUrl).subscribe({
-      next: (data) => {
-        let tempEvents: SingleEvent[] = [];
-        for (let i = 0; i < data.length; i++) {
-          if (data[i].isRecurring) {
-            tempEvents = mergeEventsLists(
-              tempEvents,
-              getRecurringEvents(
-                data[i],
-                currentDate.toDateString(),
-                lastDayOfCurrentYear.toDateString()
-              )
-            );
-          } else {
-            tempEvents = mergeEventsLists(
-              tempEvents,
-              nonRecurringEventToSingleEvent(data[i])
-            );
-          }
-        }
+    let tempEvents: SingleEvent[] = [];
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].isRecurring) {
+        tempEvents = mergeEventsLists(
+          tempEvents,
+          getRecurringEvents(
+            data[i],
+            currentDate.toDateString(),
+            lastDayOfCurrentYear.toDateString()
+          )
+        );
+      } else {
+        tempEvents = mergeEventsLists(
+          tempEvents,
+          nonRecurringEventToSingleEvent(data[i])
+        );
+      }
+    }
 
-        this.events = tempEvents;
-        this.isLoading = false;
-      },
-      error: (err: any) => {
-        this.error = "Pas d'évènements à venir.";
-        this.isLoading = false;
-      },
-    });
+    this.events = tempEvents;
   }
 
   getCurrentYear(): number {
     return new Date().getFullYear();
   }
+
   groupByMonth(events: SingleEvent[]): [string, SingleEvent[]][] {
     const grouped: { [key: string]: SingleEvent[] } = {};
 

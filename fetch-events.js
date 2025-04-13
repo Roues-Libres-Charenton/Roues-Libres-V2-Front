@@ -5,7 +5,14 @@ const API_URL = "https://xpgsbak3x3.execute-api.eu-north-1.amazonaws.com/dev";
 
 // Dates
 const currentDate = new Date();
-const lastDayOfCurrentYear = new Date(currentDate.getFullYear(), 11, 31);
+const lastDayOfCurrentYear = new Date(
+  currentDate.getFullYear(),
+  11,
+  31,
+  23,
+  59,
+  59
+);
 
 async function fetchEvents() {
   try {

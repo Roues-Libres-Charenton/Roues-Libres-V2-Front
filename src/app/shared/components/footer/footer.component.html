@@ -1,13 +1,21 @@
-<div class="w-full flex flex-col items-center justify-center items-center py-4"
+<footer class="w-full py-6 px-4 flex flex-col items-center justify-center"
     [ngStyle]="{ 'background-color': bgColor() }">
-    <div class="flex flex-row">
-        <app-clickable-icon iconName="facebook" />
-        <app-clickable-icon iconName="rss_feed" />
+    <div class="flex space-x-6 mb-4">
+        <!-- Facebook Icon -->
+        <a href="https://www.facebook.com/roueslibrescharenton" target="_blank" aria-label="Facebook"
+            class="hover:text-blue-600 transition-colors">
+            <img src="../../../../assets/fb.png" width="30px" alt="facebook icon">
+        </a>
+
+        <!-- RSS Icon -->
+        <a href="/rss" target="_blank" aria-label="RSS Feed" class="hover:text-orange-500 transition-colors">
+            <img src="../../../../assets/rss.svg" width="30px" alt="rss feed icon">
+        </a>
     </div>
-    <span class="text-[14px]">
-        Roues Libres Charenton
-    </span>
-    <a class="text-[14px]" href="/mentions-legales">
+
+    <p class="text-sm font-medium mb-1">Roues Libres Charenton</p>
+
+    <a href="/mentions-legales" class="text-sm underline transition-colors">
         Mentions légales
     </a>
-</div>
+</footer>

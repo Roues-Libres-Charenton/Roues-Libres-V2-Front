@@ -53,7 +53,6 @@ export class CalendrierComponent implements OnInit {
 
     // Cast jsonData en EventsBetweenDates pour éviter les erreurs TypeScript
     const data = jsonData as EventsBetweenDates;
-    console.log(jsonData);
 
     let tempEvents: SingleEvent[] = [];
     for (let i = 0; i < data.length; i++) {

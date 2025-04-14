@@ -1,15 +1,27 @@
-<h1 class="text-3xl font-bold text-center title">Accès au local</h1>
+<section class="max-w-3xl mx-auto px-4 py-8">
+    <h1 class="text-3xl title font-bold text-center mb-6">📍 Accès au local</h1>
+    <p class="text-center text-lg mb-10">Comment venir nous voir facilement</p>
 
-<div class="p-4 flex flex-col gap-2">
-    <p class="text-justify">
-        Pour nous rejoindre au local, le plus direct est d’utiliser le Quai des Carrières, mais cette voie est peu
-        accueillante pour les vélos.
-    </p>
-    <p class="text-justify">
-        Nous vous conseillons plutôt d’arriver par L’avenue de la Liberté et de vous arrêter au niveau du pont, et de
-        descendre à pied sur le Quai des Carrières (1 minute de marche).
-    </p>
-</div>
+    <div class="space-y-6">
+        <div class="bg-white shadow-md rounded-2xl p-6 flex gap-4 items-start">
+            <span class="text-2xl">🚴‍♂️</span>
+            <p class="text-gray-700">
+                Le moyen le plus direct pour rejoindre le local est via le <strong>Quai des Carrières</strong>, mais
+                cette voie est peu accueillante pour les vélos.
+            </p>
+        </div>
+
+        <div class="bg-white shadow-md rounded-2xl p-6 flex gap-4 items-start">
+            <span class="text-2xl">🚶‍♀️</span>
+            <p class="text-gray-700">
+                Nous vous conseillons plutôt de passer par <strong>l’avenue de la Liberté</strong>, de vous arrêter au
+                niveau du pont, puis de <strong>descendre à pied</strong> vers le Quai des Carrières (1 minute de
+                marche).
+            </p>
+        </div>
+    </div>
+</section>
+
 
 <div class="scroll-container">
     <button class="scroll-btn left" (click)="scrollImages(-1)">&#9665;</button>
@@ -32,12 +44,74 @@
     </div>
 </div>
 
-<div class="text-center my-4">
-    <a href="https://www.google.com/maps/place/Roues+Libres/@48.8208157,2.3995339,17z" target="_blank"
-        class="text-blue-500 underline block mb-2">
+
+<div class="text-center my-8 space-y-4 flex flex-col items-center">
+    <a href="https://maps.app.goo.gl/sEanFwwn9DWAgUgQ6" target="_blank"
+        class="inline-flex items-center gap-2 text-white bg-blue-600 hover:bg-blue-700 transition-colors px-6 py-3 rounded-full shadow-md">
         Voir sur Google Maps
     </a>
-    <a href="/calendrier" class="text-blue-500 underline">
-        Voir les horaires d'ouvertures
+
+    <a href="/calendrier"
+        class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors underline font-medium">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        Voir les horaires d’ouverture
     </a>
 </div>
+
+
+
+<section class="max-w-4xl mx-auto px-4 py-8">
+    <h2 class="text-3xl font-bold text-center title mb-6">🛠️ Fonctionnement du local</h2>
+    <p class="text-center text-lg mb-10">Ce que vous devez savoir avant de venir réparer votre vélo</p>
+
+    <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
+        <div class="bg-white shadow-md rounded-2xl p-6 flex gap-4 items-start">
+            <span class="text-2xl">🔧</span>
+            <p class="text-gray-700">
+                Des <strong>pieds d’atelier</strong> et des <strong>outils</strong> sont à disposition pour vous
+                permettre de réparer vos vélos.
+            </p>
+        </div>
+
+        <div class="bg-white shadow-md rounded-2xl p-6 flex gap-4 items-start">
+            <span class="text-2xl">⚙️</span>
+            <p class="text-gray-700">
+                Des pièces de rechange sont disponibles à <strong>prix libre</strong>, mais il est préférable de venir
+                avec vos propres pièces.
+            </p>
+        </div>
+
+        <div class="bg-white shadow-md rounded-2xl p-6 flex gap-4 items-start">
+            <span class="text-2xl">🤝</span>
+            <p class="text-gray-700">
+                Des <strong>bénévoles</strong> sont présents pour vous aider, mais ils ne feront pas le travail à votre
+                place.
+            </p>
+        </div>
+
+        <div class="bg-white shadow-md rounded-2xl p-6 flex gap-4 items-start">
+            <span class="text-2xl">👶</span>
+            <p class="text-gray-700">
+                Les <strong>mineurs</strong> doivent être accompagnés par un adulte.
+            </p>
+        </div>
+
+        <div class="bg-white shadow-md rounded-2xl p-6 flex gap-4 items-start">
+            <span class="text-2xl">📜</span>
+            <p class="text-gray-700">
+                Le <strong>règlement intérieur</strong> complet est disponible sur place.
+            </p>
+        </div>
+
+        <div class="bg-white shadow-md rounded-2xl p-6 flex gap-4 items-start">
+            <span class="text-2xl">🚲</span>
+            <p class="text-gray-700">
+                Si votre réparation nécessite plusieurs séances, vous pouvez <strong>laisser votre vélo en
+                    réserve</strong>, selon la place disponible.
+            </p>
+        </div>
+    </div>
+</section>

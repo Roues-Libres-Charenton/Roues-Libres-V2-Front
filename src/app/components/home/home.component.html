@@ -10,13 +10,19 @@
             <span class="text-center">
                 Atelier de co-réparation <br /> de vélos de Charenton-le-Pont
             </span>
-            <button class="member-btn
-                text-xl font-bold"
-                (click)="externalNavigateTo('https://www.helloasso.com/associations/roues-libres-charenton/adhesions/devenir-membre')">Devenir
-                membre</button>
-            <button class="member-btn text-xl font-bold" (click)="navigateTo('/acces-local')">
-                Accès au local</button>
-            <button class="member-btn text-xl font-bold" (click)="navigateTo('/calendrier')">Calendrier</button>
+            <a class="member-btn text-xl font-bold text-center"
+                href="https://www.helloasso.com/associations/roues-libres-charenton/adhesions/devenir-membre"
+                target="_blank" rel="noopener noreferrer">
+                Devenir membre
+            </a>
+
+            <a class="member-btn text-xl font-bold text-center" href="/acces-local">
+                Accès au local
+            </a>
+
+            <a class="member-btn text-xl font-bold text-center" href="/calendrier">
+                Calendrier
+            </a>
         </div>
         <img src="../../../assets/logo_roues_libres.webp" alt="Logo de l'association Roues Libres"
             class="rounded-lg h-[160px] lg:w-[200px]">

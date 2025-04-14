@@ -1,52 +1,28 @@
-import { CardImageComponent } from '../../shared/components/card-image/card-image.component';
-import {
-  GoogleMap,
-  GoogleMapsModule,
-  MapInfoWindow,
-  MapMarker,
-} from '@angular/google-maps';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { CardImageComponent } from '../../shared/components/card-image/card-image.component';
+import { SafeUrlPipe } from '../../shared/services/safe-url.pipe';
 
 @Component({
   selector: 'app-local',
   standalone: true,
-  imports: [CardImageComponent, GoogleMap, GoogleMapsModule],
   templateUrl: './local.component.html',
   styleUrl: './local.component.scss',
+  imports: [CardImageComponent, SafeUrlPipe],
 })
 export class LocalComponent implements OnInit {
-  center: google.maps.LatLngLiteral = { lat: 48.8207602, lng: 2.4020579 };
-  mapsOptions: google.maps.MapOptions = {
-    center: this.center,
-    zoom: 14,
-    streetViewControl: false,
-    mapTypeControl: false,
-    mapId: 'DEMO_MAP_ID',
-  };
+  iframeUrl =
+    'https://cartes.app/?allez=Roues+Libres%7Cn9654267843%7C2.4019%7C48.8209#17.5/48.820899/2.402387/0/40';
 
   constructor(private title: Title, private meta: Meta) {}
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.openInfoWindow();
-    }, 1000);
-
     this.title.setTitle('Roues libres Charenton - Local');
     this.meta.updateTag({
       name: 'description',
       content:
         "Découvrez le local de co-réparation de vélos de l'association des Roues Libres situé à Charenton-le-Pont.",
     });
-  }
-
-  @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow | null = null;
-  @ViewChild(MapInfoWindow) marker: MapMarker | null = null;
-
-  openInfoWindow() {
-    if (this.infoWindow != null && this.marker != null) {
-      this.infoWindow.open();
-    }
   }
 
   @ViewChild('imageContainer', { static: false }) imageContainer!: ElementRef;

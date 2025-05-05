@@ -12,11 +12,6 @@
     "recurrenceId": "6783ab4ec0436885bf2695a6",
     "exceptions": [
       {
-        "id": "67ccd791db0cdf80cd71043b",
-        "eventId": "6783ab4ec0436885bf2695a7",
-        "date": "2025-05-04T00:00:00.000Z"
-      },
-      {
         "id": "67ccd7b5db0cdf80cd71043c",
         "eventId": "6783ab4ec0436885bf2695a7",
         "date": "2025-06-01T00:00:00.000Z"

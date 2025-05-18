@@ -117,20 +117,6 @@
     }
   },
   {
-    "id": "67ccd934db0cdf80cd71044f",
-    "title": "Fête du vélo",
-    "description": "Co-réparation et découverte de l'association",
-    "date": "2025-05-17T00:00:00.000Z",
-    "startTime": "09:00",
-    "endTime": "18:00",
-    "location": "Place Aristide Briand, Charenton",
-    "type": "Fete du vélo",
-    "isRecurring": false,
-    "recurrenceId": null,
-    "exceptions": [],
-    "recurrence": null
-  },
-  {
     "id": "67ccda54db0cdf80cd710450",
     "title": "Atelier plein air",
     "description": "Atelier co-réparation",

@@ -87,11 +87,6 @@
         "date": "2025-12-28T00:00:00.000Z"
       },
       {
-        "id": "67ccd87fdb0cdf80cd71044b",
-        "eventId": "6783ab4ec0436885bf2695a7",
-        "date": "2025-05-18T00:00:00.000Z"
-      },
-      {
         "id": "67ccd888db0cdf80cd71044c",
         "eventId": "6783ab4ec0436885bf2695a7",
         "date": "2025-06-15T00:00:00.000Z"
@@ -115,20 +110,6 @@
         "Dimanche"
       ]
     }
-  },
-  {
-    "id": "67ccda54db0cdf80cd710450",
-    "title": "Atelier plein air",
-    "description": "Atelier co-réparation",
-    "date": "2025-05-18T00:00:00.000Z",
-    "startTime": "14:00",
-    "endTime": "17:00",
-    "location": "Place Aristide Briand, Charenton",
-    "type": "Atelier Plein Air",
-    "isRecurring": false,
-    "recurrenceId": null,
-    "exceptions": [],
-    "recurrence": null
   },
   {
     "id": "67ccda68db0cdf80cd710451",

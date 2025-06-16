@@ -82,11 +82,6 @@
         "date": "2025-12-28T00:00:00.000Z"
       },
       {
-        "id": "67ccd888db0cdf80cd71044c",
-        "eventId": "6783ab4ec0436885bf2695a7",
-        "date": "2025-06-15T00:00:00.000Z"
-      },
-      {
         "id": "67ccd898db0cdf80cd71044d",
         "eventId": "6783ab4ec0436885bf2695a7",
         "date": "2025-09-21T00:00:00.000Z"
@@ -105,20 +100,6 @@
         "Dimanche"
       ]
     }
-  },
-  {
-    "id": "67ccda68db0cdf80cd710451",
-    "title": "Atelier",
-    "description": "Atelier co-réparation",
-    "date": "2025-06-15T00:00:00.000Z",
-    "startTime": "14:00",
-    "endTime": "18:00",
-    "location": "Atelier 84 quai des Carrières, Charenton",
-    "type": "Atelier",
-    "isRecurring": false,
-    "recurrenceId": null,
-    "exceptions": [],
-    "recurrence": null
   },
   {
     "id": "67ccda78db0cdf80cd710452",

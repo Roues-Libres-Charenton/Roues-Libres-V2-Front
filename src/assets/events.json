@@ -17,11 +17,6 @@
         "date": "2025-08-31T00:00:00.000Z"
       },
       {
-        "id": "67ccd810db0cdf80cd710445",
-        "eventId": "6783ab4ec0436885bf2695a7",
-        "date": "2025-09-07T00:00:00.000Z"
-      },
-      {
         "id": "67ccd822db0cdf80cd710446",
         "eventId": "6783ab4ec0436885bf2695a7",
         "date": "2025-10-05T00:00:00.000Z"
@@ -88,6 +83,20 @@
     "startTime": "14:00",
     "endTime": "17:00",
     "location": "Place Aristide Briand, Charenton",
+    "type": "Atelier Plein Air",
+    "isRecurring": false,
+    "recurrenceId": null,
+    "exceptions": [],
+    "recurrence": null
+  },
+  {
+    "id": "68b479a0ad2aacc7cd2f8152",
+    "title": "Fête Environnement et Nature",
+    "description": "Atelier co-réparation",
+    "date": "2025-09-20T00:00:00.000Z",
+    "startTime": "14:00",
+    "endTime": "19:00",
+    "location": "Parc de Conflans, Charenton",
     "type": "Atelier Plein Air",
     "isRecurring": false,
     "recurrenceId": null,

@@ -3,6 +3,10 @@ name: Fetch Events and Push to Assets
 on:
   schedule:
     - cron: "0 3 * * *"
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 concurrency:
   group: fetch-events-main

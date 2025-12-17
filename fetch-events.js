@@ -27,7 +27,31 @@ async function fetchEvents() {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    const data = await response.json();
+    let data = await response.json();
+
+    if(data.length < 5) {
+      console.warn("⚠️ Warning: Fewer than 5 events fetched. Refetching with extended date range.");
+      const extendedEndDate = new Date(
+        currentDate.getFullYear() + 1,
+        11,
+        31,
+        23,
+        59,
+        59
+      );
+      const extendedParams = `startDate=${currentDate.toDateString()}&endDate=${extendedEndDate.toDateString()}`;
+      const extendedUrl = `${API_URL}/events?${extendedParams}`;
+
+      console.log(`Refetching events from: ${extendedUrl}`);
+
+      const extendedResponse = await fetch(extendedUrl);
+
+      if (!extendedResponse.ok) {
+        throw new Error(`HTTP error! Status: ${extendedResponse.status}`);
+      }
+
+      data = await extendedResponse.json();
+    }
 
     fs.writeFileSync("./src/assets/events.json", JSON.stringify(data, null, 2));
 

@@ -42,17 +42,20 @@ export class CalendrierComponent implements OnInit {
 
   loadEvents(): void {
     const currentDate = new Date();
+
+    // Cast jsonData en EventsBetweenDates pour éviter les erreurs TypeScript
+    const data = jsonData as EventsBetweenDates;
+
     const lastDayOfCurrentYear = new Date(
-      currentDate.getFullYear(),
+      currentDate.getMonth() === 11
+        ? currentDate.getFullYear() + 1
+        : currentDate.getFullYear(),
       11,
       31,
       23,
       59,
       59
     );
-
-    // Cast jsonData en EventsBetweenDates pour éviter les erreurs TypeScript
-    const data = jsonData as EventsBetweenDates;
 
     let tempEvents: SingleEvent[] = [];
     for (let i = 0; i < data.length; i++) {

@@ -100,5 +100,33 @@
         "Dimanche"
       ]
     }
+  },
+  {
+    "id": "67ccd934db0cdf80cd71044f",
+    "title": "Fête du vélo",
+    "description": "Co-réparation et découverte de l'association",
+    "date": "2026-06-06T00:00:00.000Z",
+    "startTime": "10:00",
+    "endTime": "18:00",
+    "location": "Place Aristide Briand, Charenton",
+    "type": "Fete du vélo",
+    "isRecurring": false,
+    "recurrenceId": null,
+    "exceptions": [],
+    "recurrence": null
+  },
+  {
+    "id": "68b479a0ad2aacc7cd2f8152",
+    "title": "Fête Nature et Environnement",
+    "description": "Atelier co-réparation",
+    "date": "2026-05-23T00:00:00.000Z",
+    "startTime": "14:00",
+    "endTime": "18:00",
+    "location": "Parc de Conflans, Charenton",
+    "type": "Atelier Plein Air",
+    "isRecurring": false,
+    "recurrenceId": null,
+    "exceptions": [],
+    "recurrence": null
   }
 ]

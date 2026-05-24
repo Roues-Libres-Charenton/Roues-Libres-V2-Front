@@ -99,19 +99,5 @@
     "recurrenceId": null,
     "exceptions": [],
     "recurrence": null
-  },
-  {
-    "id": "68b479a0ad2aacc7cd2f8152",
-    "title": "Fête Nature et Environnement",
-    "description": "Atelier co-réparation",
-    "date": "2026-05-23T00:00:00.000Z",
-    "startTime": "14:00",
-    "endTime": "18:00",
-    "location": "Parc de Conflans, Charenton",
-    "type": "Atelier Plein Air",
-    "isRecurring": false,
-    "recurrenceId": null,
-    "exceptions": [],
-    "recurrence": null
   }
 ]
